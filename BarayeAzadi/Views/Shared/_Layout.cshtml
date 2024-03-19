@@ -30,9 +30,20 @@
                         <li class="nav-item">
                             <a class="nav-link " asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link " asp-area="" asp-controller="Home" asp-action="ContactUs">Contactus</a>
-                        </li>
+
+                        @if (User.IsInRole(SD.Role_Admin))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link " asp-area="" asp-controller="Contactus" asp-action="Index">Messages</a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link " asp-area="" asp-controller="Contactus" asp-action="Create">Contactus</a>
+                            </li>
+                        }
+
                     </ul>
                     <ul class="navbar-nav ms-auto flex-nowrap">
                         <li class="nav-item w-25">
@@ -44,12 +55,14 @@
                             </div>
                         </li>
                     </ul>
+                    <partial name="_LoginPartial" />
                 </div>
             </div>
         </nav>
     </header>
     <div class="container">
         <main role="main" class="pb-3">
+            <partial name="_Notification" />
             @RenderBody()
         </main>
     </div>

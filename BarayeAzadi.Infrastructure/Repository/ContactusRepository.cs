@@ -19,9 +19,6 @@ namespace BarayeAzadi.Infrastructure.Repository
             _db = db;
         }
         
-        public void Update(Contactus entity)
-        {
-            _db.Update(entity);
-        }
+
     }
 }

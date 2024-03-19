@@ -1,4 +1,4 @@
-namespace BarayeAzadi.Models
+namespace BarayeAzadi.Web.Models
 {
     public class ErrorViewModel
     {

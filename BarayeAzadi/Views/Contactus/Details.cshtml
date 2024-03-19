@@ -1,0 +1,62 @@
+﻿@model Contactus
+
+<div class="w-100 card border-0 p-4">
+    <div class="card-header bg-warning bg-gradient ml-0 py-3">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="text-black py-2">
+                    Contact Us
+                </h2>
+            </div>
+        </div>
+    </div>
+    <div class="card-body border p-4">
+        <form method="post" >
+
+            <div class="p-3">
+                @* <div asp-validation-summary="ModelOnly" class="text-danger"></div>*@
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="form-floating py-3 col-12">
+                    <input asp-for="Created_Date" class="form-control border shadow" placeholder="John Doe" readonly />
+                    <label asp-for="Created_Date" class="ms-2">FullName*</label>
+                    
+                </div>
+                <div class="form-floating py-3 col-12">
+                    <input asp-for="Name" class="form-control border shadow" placeholder="John Doe" readonly />
+                    <label asp-for="Name" class="ms-2">FullName*</label>
+                    
+                </div>
+                <div class="form-floating py-3 col-12">
+                    <input asp-for="Email" class="form-control border shadow" />
+                    <label asp-for="Email" class="ms-2">Email*</label>
+                    
+                </div>
+                <div class="form-floating py-3 col-12">
+                    <input asp-for="Phone" class="form-control border shadow" placeholder="+4367054367" readonly />
+                    <label asp-for="Phone" class="ms-2">Phone(optional)</label>
+                    
+                </div>
+                <div class="form-floating py-3 col-12">
+                    <textarea asp-for="Message" style="min-height:200px; resize:none;" class="form-control
+                    border shadow" readonly>write your message here!</textarea>
+                    <label asp-for="Message" class="ms-2">Message*</label>
+                    
+                </div>
+                @if (@Model.AttachedFileUrl is not null)
+                {
+
+                    <div class="form-floating py-3 col-12">
+                        <a href="~/@Model.AttachedFileUrl" target="_blank">Attached File</a>
+                    </div>
+                }
+            </div>
+
+        </form>
+
+    </div>
+</div>
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial.cshtml" />
+    }
+}

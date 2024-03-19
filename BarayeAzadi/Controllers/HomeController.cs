@@ -1,4 +1,4 @@
-using BarayeAzadi.Models;
+using BarayeAzadi.Web.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 

@@ -65,10 +65,7 @@ namespace BarayeAzadi.Web.Controllers
                 if (result.Succeeded)
                 {
                     var user=await _userManager.FindByEmailAsync(loginVM.Email);
-                    if(await _userManager.IsInRoleAsync(user,SD.Role_Admin))
-                    {
-                        return RedirectToAction("Index", "Dashboard");
-                    }
+
                     
                     if (!string.IsNullOrEmpty(loginVM.ReturnUrl))
                     {
@@ -138,7 +135,7 @@ namespace BarayeAzadi.Web.Controllers
                 }
                 else
                 {
-                    await _userManager.AddToRoleAsync(user, SD.Role_Customer);
+                    await _userManager.AddToRoleAsync(user, SD.Role_User);
                 }
 
                 await _signInManager.SignInAsync(user, isPersistent: false);

@@ -7,13 +7,12 @@ using BarayeAzadi.Infrastructure.Data;
 using BarayeAzadi.Application.Services.Interface;
 using BarayeAzadi.Application.Services.Implementation;
 using BarayeAzadi.Domain.Entities;
+using Stripe;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
-var app = builder.Build();
 
 builder.Services.AddDbContext<ApplicationDbContext>(option =>
 option.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
@@ -31,6 +30,17 @@ builder.Services.ConfigureApplicationCookie(option =>
     option.LoginPath = "/Account/Login";
 }
 );
+
+
+builder.Services.Configure<IdentityOptions>(option =>
+{
+    option.Password.RequiredLength = 6;
+}
+);
+
+var app = builder.Build();
+
+StripeConfiguration.ApiKey = builder.Configuration.GetSection("Stripe:SecretKey").Get<string>();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

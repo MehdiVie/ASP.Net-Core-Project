@@ -37,19 +37,19 @@ namespace BarayeAzadi.Infrastructure.Data
                 if (!_roleManager.RoleExistsAsync(SD.Role_Admin).GetAwaiter().GetResult())
                 {
                     _roleManager.CreateAsync(new IdentityRole(SD.Role_Admin)).Wait();
-                    _roleManager.CreateAsync(new IdentityRole(SD.Role_Customer)).Wait();
+                    _roleManager.CreateAsync(new IdentityRole(SD.Role_User)).Wait();
 
                     _userManager.CreateAsync(new ApplicationUser
                     {
-                        UserName = "admin@mehdi.com",
-                        Email = "admin@mehdi.com",
+                        UserName = "admin@baraye-azadi.com",
+                        Email = "admin@baraye-azadi.com",
                         Name = "Mehdi Salimi",
-                        NormalizedUserName = "ADMIN@MEHDI.COM",
-                        NormalizedEmail = "ADMIN@MEHDI.COM",
+                        NormalizedUserName = "ADMIN@BARAYE-AZADI.COM",
+                        NormalizedEmail = "ADMIN@BARAYE-AZADI.COM",
                         PhoneNumber = "123432"
                     },"Admin@123");
 
-                    ApplicationUser user = _db.ApplicationUsers.FirstOrDefault(u=>u.Email== "admin@mehdi.com");
+                    ApplicationUser user = _db.ApplicationUsers.FirstOrDefault(u=>u.Email== "admin@baraye-azadi.com");
                     _userManager.AddToRoleAsync(user, SD.Role_Admin).GetAwaiter().GetResult();
                 }
             }

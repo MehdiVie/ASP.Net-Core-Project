@@ -9,7 +9,7 @@ namespace BarayeAzadi.Application.Common.Interfaces
     public interface IUnitOfWork
     {
         IContactusRepository Contactus { get; }
-
+        IApplicationUserRepository User { get; }
         void Save();
     }
 }

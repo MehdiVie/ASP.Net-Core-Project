@@ -10,7 +10,7 @@ namespace BarayeAzadi.Application.Common.Interfaces
 {
     public interface IContactusRepository : IRepository<Contactus>
     {
-        void Update(Contactus entity);
+        
         
     }
 }
