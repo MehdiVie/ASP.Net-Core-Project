@@ -1,3 +1,14 @@
 ﻿@{
-    Layout = "_Layout";
+    var controller = ViewContext.RouteData.Values["Controller"].ToString();
+    
+    if (controller == "HomeFarsi")
+    {
+        Layout = "~/Views/Shared/_Layout_Farsi.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+    
 }
+
