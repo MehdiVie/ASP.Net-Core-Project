@@ -22,7 +22,7 @@
                     <span asp-validation-for="Name" class="text-danger"></span>
                 </div>
                 <div class="form-floating py-3 col-12">
-                    <input asp-for="Email" class="form-control border shadow"  />
+                    <input asp-for="Email" class="form-control border shadow" placeholder="Email" />
                     <label asp-for="Email" class="ms-2">Email*</label>
                     <span asp-validation-for="Email" class="text-danger"></span>
                 </div>
@@ -32,8 +32,8 @@
                     <span asp-validation-for="Phone" class="text-danger"></span>
                 </div>
                 <div class="form-floating py-3 col-12">
-                    <textarea asp-for="Message" style="min-height:200px; resize:none;" class="form-control 
-                    border shadow" >write your message here!</textarea>
+                    <textarea asp-for="Message" style="min-height:200px; resize:none;" placeholder="Write here!" class="form-control 
+                    border shadow"   >write your message here!</textarea>
                     <label asp-for="Message" class="ms-2">Message*</label>
                     <span asp-validation-for="Message" class="text-danger"></span>
                 </div>

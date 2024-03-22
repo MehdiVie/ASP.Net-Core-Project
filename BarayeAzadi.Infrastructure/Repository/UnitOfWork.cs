@@ -14,6 +14,8 @@ namespace BarayeAzadi.Infrastructure.Repository
         public IContactusRepository Contactus { get; private set; }
         public IApplicationUserRepository User { get; private set; }
 
+        
+
         readonly private ApplicationDbContext _db;
 
         public UnitOfWork(ApplicationDbContext db)

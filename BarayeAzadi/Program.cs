@@ -8,6 +8,7 @@ using BarayeAzadi.Application.Services.Interface;
 using BarayeAzadi.Application.Services.Implementation;
 using BarayeAzadi.Domain.Entities;
 using Stripe;
+using Microsoft.AspNetCore.Hosting;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -40,7 +41,7 @@ builder.Services.Configure<IdentityOptions>(option =>
 
 var app = builder.Build();
 
-StripeConfiguration.ApiKey = builder.Configuration.GetSection("Stripe:SecretKey").Get<string>();
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

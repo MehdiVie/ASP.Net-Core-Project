@@ -3,11 +3,15 @@
 @inject UserManager<ApplicationUser> UserManager
 @inject SignInManager<ApplicationUser> SignInManager
 
+@{
+    ViewData["NoContainer"] = null;
+}
 
 <ul class="navbar-nav">
 
     @if (SignInManager.IsSignedIn(User))
     {
+       
         <li class="nav-item">
             <a class="nav-link" href="#">Hello, @UserManager.GetUserName(User)</a>
         </li>

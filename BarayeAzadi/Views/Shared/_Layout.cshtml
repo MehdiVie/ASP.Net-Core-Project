@@ -18,6 +18,7 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light  border-bottom box-shadow">
             <div class="container-fluid">
+
                 <a class="navbar-brand" asp-area="" >
                     <img src="~/Static_Files/Images/logo.png" alt="logo" style="width:100px;" />
                 </a>
@@ -44,33 +45,49 @@
                             </li>
                         }
 
+
                     </ul>
+                    
                     <ul class="navbar-nav ms-auto flex-nowrap">
-                        <li class="nav-item w-25">
+                        <partial name="_LoginPartial" />
+                        <li class="nav-item ">
                             <div class="d-flex  justify-content-center align-items-center">
-                            <img src="~/Static_Files/Images/lang-fa.png"  style="width:30px; height:17px" />
-                            <a class="nav-link " asp-area="" asp-controller="HomeFarsi" asp-action="Index">
-                                
-                                فارسی</a>
                             </div>
                         </li>
                     </ul>
-                    <partial name="_LoginPartial" />
+                    
                 </div>
+                <a class="nav-link " asp-area="" asp-controller="HomeFarsi" asp-action="Index">
+                    <img src="~/Static_Files/Images/lang-fa.png" style="width:30px; height:17px" />
+                    فارسی
+                </a>
             </div>
         </nav>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            <partial name="_Notification" />
-            @RenderBody()
-        </main>
-    </div>
+
+        <div class="container">
+            <main role="main" class="pb-3">
+                <partial name="_Notification" />
+                @RenderBody()
+            </main>
+        </div>
+   
 
     <footer class="border-top footer bg-dark text-muted mt-5">
-        <div class="container text-center">
- 
+        <div class="container text-center mb-3">
             Copyright © 2024 Baraye Azadi Group - All Rights Reserved.
+        </div>
+        <div class="d-flex justify-content-center">
+            <div class="me-5">
+                <a href="https://www.instagram.com/baraye_azadi_group_austria">
+                <img src="~/Static_Files/Images/Instagram_icon.png" style="height:50px;" alt="Instagram" />
+                </a>
+            </div>
+            <div class="ms-5">
+                <a href="https://t.me/baraye_azadi_group">
+                <img src="~/Static_Files/Images/Telegram_icon.png" style="height:50px;" alt="Telgram" />
+                </a>
+            </div>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

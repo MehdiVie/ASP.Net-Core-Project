@@ -10,6 +10,8 @@ namespace BarayeAzadi.Application.Common.Interfaces
     {
         IContactusRepository Contactus { get; }
         IApplicationUserRepository User { get; }
+
+       
         void Save();
     }
 }

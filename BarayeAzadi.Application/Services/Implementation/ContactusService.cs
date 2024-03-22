@@ -41,7 +41,7 @@ namespace BarayeAzadi.Application.Services.Implementation
 
         public IEnumerable<Contactus> GetAllContactuss()
         {
-            IEnumerable<Contactus> objFromDb = _unitOfWork.Contactus.GetAll();
+            IEnumerable<Contactus> objFromDb = _unitOfWork.Contactus.GetAll().OrderByDescending(u=>u.ContactusId);
 
             return objFromDb;
         }

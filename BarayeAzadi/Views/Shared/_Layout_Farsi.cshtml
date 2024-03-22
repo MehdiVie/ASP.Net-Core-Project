@@ -22,23 +22,21 @@
             
             <div class="container-fluid ">
 
-                <a class="navbar-brand pull-right order-sm-last" asp-area="">
+                <a class="navbar-brand pull-right order-sm-last ms-2" asp-area="">
                     <img src="~/Static_Files/Images/logo.png" alt="logo" style="width:100px;" />
                 </a>
+
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                
+
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <partial name="_LoginPartial_Farsi" />
+                    
                      <ul class="navbar-nav  flex-nowrap">
-                        <li class="nav-item">
-                            <div class="d-flex  justify-content-center align-items-center">
-                            <a class="nav-link " asp-area="" asp-controller="Home" asp-action="Index">English</a>
-                                <img src="~/Static_Files/Images/lang-en.png" style="width:25px; height:17px" />
-                            </div>
-                        </li>
+                        
+
+                        <partial name="_LoginPartial_Farsi" />
                      </ul>
                     <ul class="navbar-nav ms-auto flex-nowrap">
                         
@@ -60,24 +58,41 @@
                     </ul>
                     
                 </div>
-                    
-                
+                <a class="nav-link " asp-area="" asp-controller="Home" asp-action="Index">
+                    English
+                    <img src="~/Static_Files/Images/lang-en.png" style="width:25px; height:17px; " />
+                </a>
+
 
             </div>
         </nav>
         
         
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            <partial name="_Notification" />
-            @RenderBody()
-        </main>
-    </div>
+
+        <div class="container">
+            <main role="main" class="pb-3">
+                <partial name="_Notification" />
+                @RenderBody()
+            </main>
+        </div>
+
 
     <footer class="border-top footer bg-dark text-muted mt-5">
-        <div class="container text-center ">
+        <div class="container text-center mb-3">
             Copyright © 2024 Baraye Azadi Group - All Rights Reserved.
+        </div>
+        <div class="d-flex justify-content-center">
+            <div class="me-5">
+                <a href="https://www.instagram.com/baraye_azadi_group_austria">
+                    <img src="~/Static_Files/Images/Instagram_icon.png" style="height:50px;" alt="Instagram" />
+                </a>
+            </div>
+            <div class="ms-5">
+                <a href="https://t.me/baraye_azadi_group">
+                    <img src="~/Static_Files/Images/Telegram_icon.png" style="height:50px;" alt="Telgram" />
+                </a>
+            </div>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
