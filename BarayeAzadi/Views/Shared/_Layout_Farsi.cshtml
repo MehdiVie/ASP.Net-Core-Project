@@ -1,9 +1,14 @@
 ﻿<!DOCTYPE html>
 <html lang="fa"  data-bs-theme="dark">
 <head>
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - گروه برای آزادی</title>
+
+    <title>
+        @ViewData["Title"] - گروه برای آزادی (وین - اتریش)
+    </title>
+    <meta name="description" content="گروه برای آزادی شاهزاده رضا پهلوی را رهبر انقلاب ملی ایران و تنها راه برای سرنگونی جهموری اسلامی می داند." />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
@@ -12,10 +17,9 @@
           integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="~/css/Spinner.css" />
     <link href="//cdn.datatables.net/2.0.0/css/dataTables.dataTables.min.css" rel="stylesheet">
-
-
+    
 </head>
-<body>
+<body >
     <header>
         
             <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light  border-bottom box-shadow ">
@@ -39,22 +43,35 @@
                         <partial name="_LoginPartial_Farsi" />
                      </ul>
                     <ul class="navbar-nav ms-auto flex-nowrap">
-                        
-                        @if (User.IsInRole(SD.Role_Admin))
-                        {
-                            <li class="nav-item">
-                                <a class="nav-link " asp-area="" asp-controller="Contactus" asp-action="Index">Messages</a>
-                            </li>
-                        }
-                        else
-                        {
-                            <li class="nav-item">
+
+
+                        <li class="nav-item">
                                 <a class="nav-link " asp-area="" asp-controller="Contactus" asp-action="Create">ارتباط با ما</a>
-                            </li>
-                        }
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link " asp-area="" asp-controller="Statement" asp-action="IndexFarsi">بیانیه ها</a>
+                        </li>
+
                         <li class="nav-item ">
                             <a class="nav-link " asp-area="" asp-controller="HomeFarsi" asp-action="Index">صفحه اصلی</a>
                         </li>
+                        @if (User.IsInRole(SD.Role_Admin))
+                        {
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Content Manager
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="dropdown-item">
+                                        <a class="nav-link " asp-area="" asp-controller="Contactus" asp-action="Index">Messages</a>
+                                    </li>
+                                    <li class="dropdown-item">
+                                        <a class="nav-link " asp-area="" asp-controller="Statement" asp-action="IndexAdmin">Statements</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        }
                     </ul>
                     
                 </div>

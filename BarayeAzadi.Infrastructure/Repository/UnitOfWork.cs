@@ -12,6 +12,8 @@ namespace BarayeAzadi.Infrastructure.Repository
     public class UnitOfWork : IUnitOfWork
     {
         public IContactusRepository Contactus { get; private set; }
+
+        public IStatementRepository Statement { get; private set; }
         public IApplicationUserRepository User { get; private set; }
 
         
@@ -22,6 +24,7 @@ namespace BarayeAzadi.Infrastructure.Repository
         {
             _db = db;
             Contactus = new ContactusRepository(db);
+            Statement = new StatementRepository(db);
             User = new ApplicationUserRepository(db);
         }
 

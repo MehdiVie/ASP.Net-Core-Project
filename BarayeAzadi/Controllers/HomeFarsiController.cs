@@ -8,5 +8,13 @@ namespace BarayeAzadi.Web.Controllers
         {
             return View();
         }
+        public IActionResult Statements()
+        {
+            return View();
+        }
+        public IActionResult CharterText()
+        {
+            return View();
+        }
     }
 }

@@ -1,0 +1,86 @@
+﻿@model Statement
+
+<div class="w-100 card border-0 p-4">
+    <div class="card-header bg-warning bg-gradient ml-0 py-3">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="text-black py-2">
+                    Delete Statement
+                </h2>
+            </div>
+        </div>
+    </div>
+    <div class="card-body border p-4">
+        <form method="post" enctype="multipart/form-data">
+            <input type="hidden" asp-for="@Model.StatementId" />
+            <input type="hidden" asp-for="@Model.Created_Date" />
+            <div class="p-3">
+                @* <div asp-validation-summary="ModelOnly" class="text-danger"></div>*@
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="form-floating py-3 col-12">
+                    <select disabled asp-for="Language" class="form-control border shadow">
+                        <option value="Farsi" selected>فارسی</option>
+                        <option value="English">English</option>
+                    </select>
+                </div>
+                <div class="form-floating py-3 col-12">
+                    <select disabled asp-for="Type" class="form-control border shadow">
+                        <option value="Text" selected>Text</option>
+                        <option value="Video">Video</option>
+                        <option value="Image">Image</option>
+                    </select>
+
+                </div>
+                <div class="form-floating py-3 col-12">
+                    <input asp-for="ImageUrl" type="hidden" class="form-control border shadow" />
+                    <input disabled asp-for="Image" class="form-control border shadow" />
+                    <label asp-for="Image" class="ms-2"></label>
+                    <span asp-validation-for="ImageUrl" class="text-danger"></span>
+                </div>
+                <div class="form-floating py-3 col-12">
+                    <input disabled asp-for="Title" class="form-control border shadow" placeholder="Title" />
+                    <label asp-for="Title" class="ms-2">Title*</label>
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+                <div class="form-floating py-3 col-12">
+                    <textarea disabled asp-for="Brief" style="min-height:200px; resize:none;" placeholder="Write here!" class="form-control
+                    border shadow">write your Text here!</textarea>
+                    <label asp-for="Brief" class="ms-2">Brief*</label>
+                    <span asp-validation-for="Brief" class="text-danger"></span>
+                </div>
+                <div class="form-floating py-3 col-12">
+                    <textarea disabled asp-for="Text" style="min-height:200px; resize:none;" placeholder="Write here!" class="form-control
+                    border shadow">write your Text here!</textarea>
+                    <label asp-for="Text" class="ms-2">Text*</label>
+                    <span asp-validation-for="Text" class="text-danger"></span>
+                </div>
+                <div class="form-floating py-3 col-12">
+                    <input asp-for="PdfUrl" type="hidden" class="form-control border shadow" />
+                    <input disabled asp-for="Pdf" class="form-control border shadow" />
+                    <label asp-for="Pdf" class="ms-2"></label>
+                    <span asp-validation-for="PdfUrl" class="text-danger"></span>
+                </div>
+                <div class="form-floating py-3 col-12">
+                    <input asp-for="MediaUrl" type="hidden" class="form-control border shadow" />
+                    <input disabled asp-for="Media" class="form-control border shadow" />
+                    <label asp-for="Media" class="ms-2"></label>
+                    <span asp-validation-for="MediaUrl" class="text-danger"></span>
+                </div>
+                <div class="row pt-2">
+                    <div class="col-6 col-md-3">
+                        <button type="submit" class=" btn btn-danger w-100">
+                            Delete Statement
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+</div>
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial.cshtml" />
+    }
+}

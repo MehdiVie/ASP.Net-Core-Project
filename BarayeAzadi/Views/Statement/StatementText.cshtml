@@ -1,0 +1,72 @@
+﻿@model Statement
+
+@{
+    ViewData["Title"] = Model.Title;
+}
+
+<div class="container-fluid text-center p-0">
+
+
+    <div class="container-fluid text-center p-0">
+
+
+        <div class="row  d-flex container align-items-center justify-content-center">
+            <div class="col col-sm-12  " style=" font-family:'Times New Roman';">
+
+                    <h4 class="lh-md shadow p-3  bg-body-tertiary rounded  text-end ">
+                        <span dir="rtl">
+                        @if (Model.Type == "Video")
+                        {
+                            <div class="text-center">
+                                @Model.Title
+                            </div>
+                        }
+                            <br /><br />
+                        @if (Model.Language == "English" && Model.Type == "Text")
+                        {
+                            <div class="text-start">
+                                @Html.Raw(Model.Text.Replace("\r\n", "<br />").Replace("\n", "<br />"))
+                            </div>
+                        }
+                        else if (Model.Language == "Farsi" && Model.Type == "Text")
+                        {
+                            <div >
+                                @Html.Raw(Model.Text.Replace("\r\n", "<br />").Replace("\n", "<br />"))
+                            </div>
+                        }
+                        else if (Model.Type == "Video")
+                        {
+
+                            <div class="tutorial container text-center my-5 ratio ratio-16x9">
+                                <iframe src="@Model.Text"
+                                        allowfullscreen>
+                                </iframe>
+                            </div>
+
+                             //@Html.Raw(Model.Text)
+                            
+                        }
+                        
+                        @if (Model.Type == "Text")
+                        {
+                            <br />
+                            <div class="text-center  ">
+                                <a href="~/@Model.PdfUrl" style="text-decoration:none; color:cyan">
+                                    دانلود بیانیه بصورت PDF
+                                </a>
+                            </div>
+                        }
+
+                        </span>
+
+                    </h4>
+                </div>
+            </div>
+        
+    </div>
+
+
+
+</div>
+
+

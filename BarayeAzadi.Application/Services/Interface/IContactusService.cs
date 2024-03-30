@@ -12,6 +12,6 @@ namespace BarayeAzadi.Application.Services.Interface
         IEnumerable<Contactus> GetAllContactuss();
         Contactus GetContactusById(int id);
         void CreateContactus(Contactus contactus);
-        
+
     }
 }

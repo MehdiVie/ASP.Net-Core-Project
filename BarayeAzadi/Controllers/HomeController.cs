@@ -17,6 +17,14 @@ namespace BarayeAzadi.Controllers
         {
             return View();
         }
+        public IActionResult CharterText()
+        {
+            return View();
+        }
+        public IActionResult Statements()
+        {
+            return View();
+        }
 
         public IActionResult Contactus()
         {

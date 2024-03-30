@@ -2,49 +2,60 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    
+<div class="container-fluid p-0">
 
-    <div class="container text-center p-5">
-        <div class="row  d-flex align-middle">
-            <div class="col col-sm-4  align-items-center my-auto">
+
+    <div class="container-fluid col-sm-12 mb-5 mt-5 p-0">
+
+        <div class="row  d-flex container align-items-center justify-content-center">
+            <div class="col col-sm-3  align-items-center my-auto">
                 <img src="~/Static_Files/Images/logo-big.png" alt="logo" style="width: 300px"  />
             </div>
-            <div class="col col-sm-8  text-justify my-auto align-middle" style=" font-family:'Times New Roman';">
+            <div class="col col-sm-9  text-justify my-auto align-middle" style=" font-family:'Times New Roman';">
                 
                 <h5 class="lh-md shadow p-3  bg-body-tertiary rounded text-start  ">
-                Since 2018 AD, the Baraye Azadi (Iranian National Solidarity) Group has embarked on its human-rights and political activities for Iran’s Freedom in Austria.
+                    The Group for Freedom initiated its political activism in 2018 (initially under the name Iranian 
+                    National Solidarity Movement) in Vienna, Austria.
                     <br /><br />
-                    This group sees the overthrow of the Islamic Republic regime as the only path to freedom for Iran. 
-                    <br />
-                
-                    (This includes all branches and elements of it, notably: the Supreme Leader's Office, the Revolutionary 
-                    Guards Corps, all repressive intelligence and military organs inside and outside the country, regime's lobbyists 
-                    (such as the NIAC), fake regime's opposition, and all Iranians enemies who feed off the blood of 
-                    the Iranians.)
+                    This group perceives the only path to Iran's freedom as the overthrow and downfall of the 
+                    entirety of the Islamic Republic regime, including all its branches and agents, such as the 
+                    Supreme Leader's office, the Revolutionary Guard, all suppressive intelligence and military 
+                    agencies inside and outside the country, reformists, moderates, regime lobbyists (like NIAC), counterfeit 
+                    opposition, and all rights violators and profiteers who feed off the blood of the Iranian people.
                     <br /><br />
                     <div class="text-center  ">
-                        <a href="~/Static_Files/Docs/charter-of-the-baraye-azadi-group.pdf" style="text-decoration:none; color:cyan">
-                            Charter of the Baraye Azadi group
+                        <a asp-controller="Home" asp-action="CharterText"
+                           class=" mx-2" style="text-decoration:none; color:cyan">
+                            Full Text of Charter
+                        </a>
+                    </div>
+                    <br />
+                    <div class="text-center  ">
+                        <a href="~/Static_Files/Docs/Baraye_Azadi_Group_Charter.pdf" style="text-decoration:none; color:cyan">
+                            Download Chart as PDF
                         </a>
                     </div>
                 
                 </h5>
                 
             </div>
+
         </div>
     </div>
 
     <div class="container text-center p-5">
         <div class="row  d-flex align-middle">
-            <div class="col col-sm-4  align-items-center my-auto">
+            <div class="col col-sm-3  align-items-center my-auto">
                 <img src="~/Static_Files/Images/logo-united.png" alt="logo" style="width: 300px" />
             </div>
-            <div class="col col-sm-8  text-justify my-auto align-middle" style=" font-family:'Times New Roman';">
+            <div class="col col-sm-9 text-justify my-auto align-middle" style=" font-family:'Times New Roman';">
 
                 <h5 class="lh-md shadow p-3  bg-body-tertiary rounded  text-start ">
 
-                    Also, the Baraye Azadi Group is one of the official members of the United Iranian Federation. 
+                    Also, the Baraye Azadi Group is one of the official members of the 
+                    <a href="https://unitediraniansfed.org/" style="text-decoration:none">
+                    United Iranian Federation. 
+                    </a>
                     <br /><br />
                     The United Iranian Federation, consisting of over 52 political groups and organizations from around the
                     world under the tricolor flag of the lion and sun (Shir-o-Khoshid) - which is the symbol of our 

@@ -13,5 +13,11 @@ namespace BarayeAzadi.Application.Common.Utility
         public const string Role_User = "User";
         public const string Role_Admin = "Admin";
 
+        public const string StatusShow = "Show";
+        public const string StatusHide = "Hide";
+
+        public const string StatementVideo = "Video";
+        public const string StatementImage = "Image";
+        public const string StatementText = "Text";
     }
 }

@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="wwwroot\Static_Files\Contactus-Attached-Files\" />
+    <Folder Include="wwwroot\Static_Files\Docs\Statements\Media\" />
   </ItemGroup>
 
 </Project>

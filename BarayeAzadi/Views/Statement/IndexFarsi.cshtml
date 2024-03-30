@@ -1,0 +1,76 @@
+﻿@model IEnumerable<Statement>
+
+@{
+    ViewData["Title"] = "بیانیه ها";
+
+}
+
+<div class="container-fluid text-center p-0">
+
+
+    <div class="container-fluid text-center mt-5">
+
+        @foreach (var item in Model)
+        {
+
+            <div class="row   d-flex container align-items-center justify-content-center mb-5">
+                
+            <div class="col col-sm-9  text-justify my-auto align-middle" style=" font-family:'Times New Roman';">
+
+                <h4 class="lh-md shadow p-3  bg-body-tertiary rounded  text-end ">
+                    <span dir="rtl">
+                        <div class="text-center">
+                            @item.Title
+                        </div>
+                            <br />
+                        @if (item.Type=="Text")
+                            {
+                                
+                                <br />
+                                @item.Brief
+                                <br />
+                                <br />
+                           
+                        <div class="text-center  ">
+                                <a asp-controller="Statement" asp-action="StatementText" asp-route-statementId="@item.StatementId"
+                                       class=" mx-2" style="text-decoration:none; color:cyan">
+                                مشاهده متن کامل بیانیه
+                             </a>
+                        </div>
+                        <br />
+                        <div class="text-center  ">
+                            <a href="~/@item.PdfUrl" style="text-decoration:none; color:cyan">
+                                دانلود بیانیه بصورت PDF
+                            </a>
+                                </div>
+                            }
+                            else if (item.Type == "Video")
+                            {
+                                <div class="text-center  ">
+                                    <a asp-controller="Statement" asp-action="StatementText" asp-route-statementId="@item.StatementId"
+                                       class=" mx-2" style="text-decoration:none; color:cyan">
+                                        مشاهده ویدیوی بیانیه
+                                    </a>
+                                </div>
+                            }
+                        </span>
+
+                </h4>
+            </div>
+            <div class="col col-sm-3  align-items-center my-auto mb-5">
+                    <img src="~/@item.ImageUrl" style="width: 300px" />
+            </div>
+                
+        </div>
+        }
+    </div>
+
+
+
+</div>
+
+@section Scripts {
+
+    <script type="text/javascript" src="~/Scripts/CutStatment.js"></script>
+
+}

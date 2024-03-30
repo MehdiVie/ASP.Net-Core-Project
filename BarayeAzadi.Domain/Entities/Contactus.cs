@@ -16,7 +16,6 @@ namespace BarayeAzadi.Domain.Entities
         public int ContactusId { get; set; }
         [Required]
         [StringLength(50, MinimumLength = 4)]
-        [RegularExpression(@"^([a-zA-Z \.\&\'\-]+)$", ErrorMessage = "Please enter valid Name!")]
         [Display(Name = "Full Name")]
         public string Name { get; set; }
         [Required]

@@ -9,6 +9,8 @@ namespace BarayeAzadi.Application.Common.Interfaces
     public interface IUnitOfWork
     {
         IContactusRepository Contactus { get; }
+
+        IStatementRepository Statement { get; }
         IApplicationUserRepository User { get; }
 
        
