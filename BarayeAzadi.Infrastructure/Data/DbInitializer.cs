@@ -43,7 +43,7 @@ namespace BarayeAzadi.Infrastructure.Data
                     {
                         UserName = "admin@baraye-azadi.com",
                         Email = "admin@baraye-azadi.com",
-                        Name = "Mehdi Salimi",
+                        Name = "****",
                         NormalizedUserName = "ADMIN@BARAYE-AZADI.COM",
                         NormalizedEmail = "ADMIN@BARAYE-AZADI.COM",
                         PhoneNumber = "123432"
