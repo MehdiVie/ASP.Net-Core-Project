@@ -15,18 +15,34 @@
 
                     <h4 class="lh-md shadow p-3  bg-body-tertiary rounded  text-end ">
                         <span dir="rtl">
-                        @if (Model.Type == "Video")
+                        @if (Model.Type == "Video" || Model.Type == "DemoVideo")
                         {
-                            <div class="text-center">
-                                @Model.Title
-                            </div>
+                            <br />
+                            if (Model.Language == "English")
+                            {
+                                <span dir="ltr">
+                                    <div class="text-center">
+                                        @Model.Title
+                                    </div>
+                                </span>
+                            }
+                            else
+                            {
+                                <div class="text-center">
+                                    @Model.Title
+                                </div>
+                            }
+                            <br />
+
                         }
-                            <br /><br />
+                            
                         @if (Model.Language == "English" && Model.Type == "Text")
                         {
+                            <span dir="ltr">
                             <div class="text-start">
                                 @Html.Raw(Model.Text.Replace("\r\n", "<br />").Replace("\n", "<br />"))
                             </div>
+                            </span>
                         }
                         else if (Model.Language == "Farsi" && Model.Type == "Text")
                         {
@@ -34,7 +50,7 @@
                                 @Html.Raw(Model.Text.Replace("\r\n", "<br />").Replace("\n", "<br />"))
                             </div>
                         }
-                        else if (Model.Type == "Video")
+                        else if (Model.Type == "Video" || Model.Type == "DemoVideo")
                         {
 
                             <div class="tutorial container text-center my-5 ratio ratio-16x9">
@@ -43,7 +59,6 @@
                                 </iframe>
                             </div>
 
-                             //@Html.Raw(Model.Text)
                             
                         }
                         
