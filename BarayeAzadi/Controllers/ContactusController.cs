@@ -2,6 +2,7 @@
 using BarayeAzadi.Application.Services.Implementation;
 using BarayeAzadi.Application.Services.Interface;
 using BarayeAzadi.Domain.Entities;
+using BarayeAzadi.Infrastructure.Migrations;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -35,6 +36,26 @@ namespace BarayeAzadi.Web.Controllers
         public IActionResult Create()
         {
             return View();
+        }
+        [Authorize(Roles = SD.Role_Admin)]
+        public IActionResult Delete(int contactId)
+        {
+            Contactus? obj =  _contactusService.GetContactusById(contactId);
+            
+            
+            if (obj is null)
+            {
+                return RedirectToAction("Error", "Home");
+            }
+            bool deleted = _contactusService.DeleteContactus(obj);
+            if (deleted)
+            {
+                TempData["success"] = "Statement has been deleted successfully!";
+                return RedirectToAction(nameof(Index));
+
+            }
+            TempData["error"] = "Statement could not be deleted!";
+            return RedirectToAction(nameof(Index));
         }
         [HttpPost]
         public IActionResult Create(Contactus contactus)

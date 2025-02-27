@@ -16,13 +16,13 @@ namespace BarayeAzadi.Web.Controllers
         }
         public IActionResult IndexFarsi()
         {
-            return View(_statementService.GetAllStatement().Where(u=>u.Language == "Farsi" && u.Type != "DemoVideo")
-                .OrderBy(u=>u.StatementId));
+            return View(_statementService.GetAllStatement().Where(u => u.Language == "Farsi" && u.Type != "DemoVideo")
+                .OrderByDescending(u => u.Created_Date));
         }
         public IActionResult IndexEnglish()
         {
             return View(_statementService.GetAllStatement().Where(u => u.Language == "English" && u.Type != "DemoVideo")
-                .OrderBy(u => u.StatementId));
+                .OrderByDescending(u => u.Created_Date));
         }
         public IActionResult DemoVideoEnglish()
         {
@@ -33,7 +33,7 @@ namespace BarayeAzadi.Web.Controllers
         public IActionResult DemoVideoFarsi()
         {
             return View(_statementService.GetAllStatement().Where(u => u.Language == "Farsi" && u.Type == "DemoVideo")
-                .OrderBy(u => u.StatementId));
+                .OrderByDescending(u => u.StatementId));
 
         }
         [Authorize(Roles = SD.Role_Admin)]

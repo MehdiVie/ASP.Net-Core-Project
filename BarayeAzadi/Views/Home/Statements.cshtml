@@ -1,41 +1,47 @@
 ﻿@{
-    ViewData["Title"] = "Statements - Baraye Azadi Group";
+    ViewData["Title"] = Model.Title;
 }
 
-<div class="text-center">
-    
+<div class="container-fluid text-center p-0">
 
-    <div class="container text-center p-5">
-        <div class="row  d-flex align-middle">
-            <div class="col col-sm-4  align-items-center my-auto">
-                <img src="~/Static_Files/Docs/Statements/Images/Faezeh_Hashemi.jpg" alt="logo" style="width: 300px"  />
+
+    <div class="container-fluid text-center p-0">
+        <div class="row  d-flex container align-items-center justify-content-center">
+            <div class="col col-sm-9  text-justify my-auto align-middle" style=" font-family:'Times New Roman';">
+
+                <h4 class="lh-md shadow p-3  bg-body-tertiary rounded  text-end ">
+                    <span dir="rtl">
+                        <div class="text-center">
+                        بیانیه گروه برای آزادی
+                        در محکومیت مطلب وبسایت وزارت خارجه آمریکا در مورد فائزه هاشمی رفسنجانی
+                        </div>
+                        <br /><br />
+                        فائزه هاشمی رفسنجانی، دختر آیت الله اکبر هاشمی رفسنجانی است.
+                        تیم دونفره اکبر هاشمی رفسنجانی و علی خامنه ای به عنوان مسئولین رده بالای حکومتی - و کسانی که ستونهای جمهوری اسلامی را بنا نهادند - در تمامی جنایات و اقدامات این حکومت بر ضد  مردم و سرزمین ایران، نقش اصلی را داشته اند.
+                        <br /><br />
+                        <div class="text-center  ">
+                            <a href="~/Static_Files/Docs/Statements/032024-بیانیه-در-محکومیت-مقاله-سایت-فارسی-وزارت-خارجه-امریکا-در-مورد-فائزه-هاشمی.pdf" style="text-decoration:none; color:cyan">
+                                متن کامل بیانیه گروه برای آزادی
+                            </a>
+                        </div>
+                    </span>
+
+                </h4>
+
+
             </div>
-            <div class="col col-sm-8  text-justify my-auto align-middle" style=" font-family:'Times New Roman';">
-                
-                <h5 class="lh-md shadow p-3  bg-body-tertiary rounded text-start  ">
-                    <div class="text-center">
-                    Statement of the Baraye Azadi Group
-                    <br />
-                    Regarding the Condemnation of the US Department of State's Statement on Faezeh Hashemi Rafsanjani
-                    </div>
-                    <br /><br />
-                    Faezeh Hashemi Rafsanjani is the daughter of Ayatollah Akbar Hashemi Rafsanjani. 
-                    The duo of Akbar Hashemi Rafsanjani and Ali Khamenei, as high-ranking officials of the government - and 
-                    those who laid the pillars of the Islamic Republic - have played a central role in all the crimes and actions
-                    of this government against the people and the land of Iran.
-                    <br /><br />
-                    <div class="text-center  ">
-                        <a href="~/Static_Files/Docs/Statements/032024-Statement-Condemning-the-Article-on-the-Persian-Website by-US-Department-of-State-Regarding-Faezeh-Hashemi.pdf" style="text-decoration:none; color:cyan">
-                            Full Text of this Statement
-                        </a>
-                    </div>
-                
-                </h5>
-                
+            <div class="col col-sm-3  align-items-center my-auto">
+                <img src="~/Static_Files/Docs/Statements/Images/Faezeh_Hashemi.jpg" style="width: 300px" />
             </div>
         </div>
     </div>
 
-   
+
 
 </div>
+
+@section Scripts{
+
+<script type="text/javascript" src="~/Scripts/CutStatment.js"></script>
+
+}

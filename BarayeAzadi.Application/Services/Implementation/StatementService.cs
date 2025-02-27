@@ -118,7 +118,7 @@ namespace BarayeAzadi.Application.Services.Implementation
                 string fileName = Guid.NewGuid().ToString() + Path.GetExtension(statement.Pdf.FileName);
                 string PdfPath = Path.Combine(_webHostEnvironment.WebRootPath, @"Static_Files\Docs\Statements");
 
-                if (statement.PdfUrl != "Static_Files\\Docs\\Statements\\default.pdf")
+                if (statement.PdfUrl != null)
                 {
                     var oldPdfPath = Path.Combine(_webHostEnvironment.WebRootPath, statement.PdfUrl);
 

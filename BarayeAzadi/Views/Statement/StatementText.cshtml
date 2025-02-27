@@ -1,6 +1,10 @@
 ﻿@model Statement
 
+@using Microsoft.AspNetCore.Http.Extensions;
+
 @{
+    // string url = Context.Request.GetDisplayUrl();
+    string url = "https://baraye-azadi.com/Statement/StatementText?statementId=15";
     ViewData["Title"] = Model.Title;
 }
 
@@ -38,6 +42,11 @@
                             
                         @if (Model.Language == "English" && Model.Type == "Text")
                         {
+                            <div class="text-center  ">
+                                <br />
+                                <img src="~/@Model.ImageUrl" style="width: 300px" />
+                                <br /><br />
+                            </div>
                             <span dir="ltr">
                             <div class="text-start">
                                 @Html.Raw(Model.Text.Replace("\r\n", "<br />").Replace("\n", "<br />"))
@@ -46,6 +55,11 @@
                         }
                         else if (Model.Language == "Farsi" && Model.Type == "Text")
                         {
+                            <div class="text-center  ">
+                                <br />
+                                <img src="~/@Model.ImageUrl" style="width: 300px" />
+                                <br /><br />
+                            </div>
                             <div >
                                 @Html.Raw(Model.Text.Replace("\r\n", "<br />").Replace("\n", "<br />"))
                             </div>
@@ -62,25 +76,38 @@
                             
                         }
                         
-                        @if (Model.Type == "Text")
+                        @if (Model.Language == "Farsi" && Model.Type == "Text")
                         {
-                            <br />
+
                             <div class="text-center  ">
+                                <br />
+                                <img src="~/@Model.ImageUrl" style="width: 300px" />
+                                <br /><br /><br />
                                 <a href="~/@Model.PdfUrl" style="text-decoration:none; color:cyan">
                                     دانلود بیانیه بصورت PDF
                                 </a>
                             </div>
                         }
+                        else if (Model.Language == "English" && Model.Type == "Text")
+                        {
 
+                            <div class="text-center  ">
+                                <br />
+                                <img src="~/@Model.ImageUrl" style="width: 300px" />
+                                <br /><br /><br />
+                                <a href="~/@Model.PdfUrl" style="text-decoration:none; color:cyan">
+                                    Download Statement as PDF
+                                </a>
+                            </div>
+                        }
                         </span>
 
                     </h4>
                 </div>
             </div>
-        
+       
     </div>
-
-
+    <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 </div>
 

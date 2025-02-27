@@ -45,7 +45,24 @@ namespace BarayeAzadi.Application.Services.Implementation
 
             return objFromDb;
         }
+        public bool DeleteContactus(Contactus contactus)
+        {
+            try
+            {
+                //Contactus? objFromDb = _unitOfWork.Contactus.Get(u => u.ContactusId == id);
 
+                if (contactus is not null)
+                {
+                    _unitOfWork.Contactus.Remove(contactus);
+                    _unitOfWork.Save();
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
         public Contactus GetContactusById(int id)
         {
             try

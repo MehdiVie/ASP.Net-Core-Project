@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Statement>
 
 @{
-    ViewData["Title"] = "بیانیه ها";
+    ViewData["Title"] = "";
 
 }
 
@@ -14,6 +14,10 @@
         {
 
             <div class="row   d-flex container align-items-center justify-content-center mb-5">
+
+            <div class="col col-sm-3  align-items-center my-auto mb-5">
+                 <img src="~/@item.ImageUrl" style="width: 300px" />
+            </div>
                 
             <div class="col col-sm-9  text-justify my-auto align-middle" style=" font-family:'Times New Roman';">
 
@@ -57,9 +61,7 @@
 
                 </h4>
             </div>
-            <div class="col col-sm-3  align-items-center my-auto mb-5">
-                    <img src="~/@item.ImageUrl" style="width: 300px" />
-            </div>
+
                 
         </div>
         }

@@ -1,6 +1,8 @@
 ﻿<!DOCTYPE html>
-<html lang="en" data-bs-theme="dark">
+<html lang="fa"  data-bs-theme="dark">
 <head>
+
+    <meta charset="utf-8" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VTH37RXXVT"></script>
     <script>
@@ -10,10 +12,12 @@
 
         gtag('config', 'G-VTH37RXXVT');
     </script>
-    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Baraye Azadi Group (Vienna - Austria)</title>
-    <meta name="description" content="The Baraye Azadi Group considers Prince Reza Pahlavi as the leader of the Iraniain National Revolution for freedom and sees him as the sole path to overthrow the Islamic Republic." />
+
+    <title>
+        Baraye Azadi Group | گروه برای آزادی
+    </title>
+    <meta name="description" content="گروه برای آزادی شاهزاده رضا پهلوی را رهبر انقلاب ملی ایران و تنها راه برای سرنگونی جهموری اسلامی می داند  . زن زندگی آزادی مرد میهن آبادی" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
@@ -23,21 +27,50 @@
     <link rel="stylesheet" href="~/css/Spinner.css" />
     <link href="//cdn.datatables.net/2.0.0/css/dataTables.dataTables.min.css" rel="stylesheet">
 
+    
 </head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light  border-bottom box-shadow">
-            <div class="container-fluid">
+<body >
 
-                <a class="navbar-brand" asp-area="" >
+    <header>
+        
+            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light  border-bottom box-shadow ">
+            
+            <div class="container-fluid ">
+
+                <a class="navbar-brand pull-right order-sm-last ms-2" asp-area="">
                     <img src="~/Static_Files/Images/logo.png" alt="logo" style="width:100px;" />
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav  flex-nowrap">
+                    
+                     <ul class="navbar-nav  flex-nowrap">
+                        
+
+                        <partial name="_LoginPartial" />
+                     </ul>
+                    <ul class="navbar-nav ms-auto flex-nowrap">
+
+                        <!--
+                        <li class="nav-item">
+                                <a class="nav-link " asp-area="" asp-controller="Contactus" asp-action="Create">ارتباط با ما</a>
+                        </li>
+                        -->
+                        <li class="nav-item">
+                            <a class="nav-link " asp-area="" asp-controller="Statement" asp-action="DemoVideoFarsi">تجمعات</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link " asp-area="" asp-controller="Statement" asp-action="IndexFarsi">بیانیه ها</a>
+                        </li>
+
+                        <li class="nav-item ">
+                            <a class="nav-link " asp-area="" asp-controller="Home" asp-action="Index">صفحه اصلی</a>
+                        </li>
                         @if (User.IsInRole(SD.Role_Admin))
                         {
                             <li class="nav-item dropdown">
@@ -54,63 +87,54 @@
                                 </ul>
                             </li>
                         }
-                        <li class="nav-item">
-                            <a class="nav-link " asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link " asp-area="" asp-controller="Statement" asp-action="DemoVideoEnglish">Demonstrations</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link " asp-area="" asp-controller="Statement" asp-action="IndexEnglish">Statements</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link " asp-area="" asp-controller="Contactus" asp-action="Create">Contactus</a>
-                        </li>
-                    </ul>
-                    
-                    <ul class="navbar-nav ms-auto flex-nowrap">
-                        <partial name="_LoginPartial" />
-                        <li class="nav-item ">
-                            <div class="d-flex  justify-content-center align-items-center">
-                            </div>
-                        </li>
                     </ul>
                     
                 </div>
-                <a class="nav-link " asp-area="" asp-controller="HomeFarsi" asp-action="Index">
-                    <img src="~/Static_Files/Images/lang-fa.png" style="width:30px; height:17px" />
-                    فارسی
+                <a class="nav-link " asp-area="" asp-controller="HomeEnglish" asp-action="Index">
+                    English
+                    <img src="~/Static_Files/Images/lang-en.png" style="width:25px; height:17px; " />
                 </a>
             </div>
         </nav>
+        
+        
     </header>
 
         <div class="container">
             <main role="main" class="pb-3">
                 <partial name="_Notification" />
                 @RenderBody()
+                <br />
+            <div class="sharethis-inline-share-buttons"></div>
             </main>
         </div>
-   
+
 
     <footer class="border-top footer bg-dark text-muted mt-5">
         <div class="container text-center mb-3 flex-nowrap">
             Copyright © 2024 Baraye Azadi Group - All Rights Reserved.
+            <br /><br />
+            رسانه های اجتماعی ما
         </div>
         <div class="d-flex justify-content-center">
-            <div class="me-5">
+            <div class="me-4">
                 <a href="https://www.instagram.com/baraye_azadi_group_austria">
-                <img src="~/Static_Files/Images/Instagram_icon.png" style="height:50px;" alt="Instagram" />
+                    <img src="~/Static_Files/Images/Instagram_icon.png" style="height:50px;" alt="Instagram" />
                 </a>
             </div>
-            <div class="ms-5 me-5">
+            <div class="ms-4 me-4">
                 <a href="https://t.me/baraye_azadi_group">
-                <img src="~/Static_Files/Images/Telegram_icon.png" style="height:50px;" alt="Telgram" />
+                    <img src="~/Static_Files/Images/Telegram_icon.png" style="height:50px;" alt="Telgram" />
                 </a>
             </div>
-            <div class="ms-5">
+            <div class="ms-4 me-4">
                 <a href="mailto:baraye.azadi.group@gmail.com">
-                    <img src="~/Static_Files/Images/gmail_icon.png" style="height:50px;" alt="Telgram" />
+                    <img src="~/Static_Files/Images/gmail_icon.png" style="height:50px;" alt="Gmail" />
+                </a>
+            </div>
+            <div class="ms-4">
+                <a href="https://twitter.com/barayazadigroup">
+                    <img src="~/Static_Files/Images/x_icon.png" style="height:50px;" alt="X" />
                 </a>
             </div>
         </div>
@@ -121,7 +145,10 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="//cdn.datatables.net/2.0.0/js/dataTables.min.js" asp-append-version="true"></script>
     <script src="~/js/jquery.unobtrusive-ajax.min.js"> </script>
-
     @await RenderSectionAsync("Scripts", required: false)
+
+    <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=663b82ae13418b001c9ca03b&product=inline-share-buttons&source=platform" async="async"></script>
+
+
 </body>
 </html>

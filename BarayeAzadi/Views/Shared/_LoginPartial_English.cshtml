@@ -2,6 +2,7 @@
 
 @inject UserManager<ApplicationUser> UserManager
 @inject SignInManager<ApplicationUser> SignInManager
+
 @{
     ViewData["NoContainer"] = null;
 }
@@ -10,23 +11,22 @@
 
     @if (SignInManager.IsSignedIn(User))
     {
-        <li class="nav-item">
-            <a class="nav-link" asp-controller="Account" asp-action="Logout">Logout</a>
-        </li>
+       
         <li class="nav-item">
             <a class="nav-link" href="#">Hello, @UserManager.GetUserName(User)</a>
         </li>
-
+        <li class="nav-item">
+            <a class="nav-link" asp-controller="Account" asp-action="Logout">Logout</a>
+        </li>
     }
     else
     {
         <li class="nav-item">
-            <a class="nav-link" asp-controller="Account" asp-action="Login">Login</a>
-        </li>
-        <li class="nav-item">
             <a class="nav-link" asp-controller="Account" asp-action="Register">Register</a>
         </li>
-
+        <li class="nav-item">
+            <a class="nav-link" asp-controller="Account" asp-action="Login">Login</a>
+        </li>
     }
 
 </ul>
